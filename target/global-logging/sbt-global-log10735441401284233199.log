@@ -1,0 +1,116 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(test, Some(4a21fb43-f65c-4a8b-a4b8-d4d61a97c0da), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Test / test[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to /Users/matkodipalo/ZIO/target/scala-2.13/test-classes ...[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matkodipalo/ZIO/src/test/scala/ExampleSpec.scala:5:12: object test is not a member of package zio[0m
+[0m[[0m[31merror[0m] [0m[0mimport zio.test.Assertion._[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matkodipalo/ZIO/src/test/scala/ExampleSpec.scala:6:12: object test is not a member of package zio[0m
+[0m[[0m[31merror[0m] [0m[0mimport zio.test._[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matkodipalo/ZIO/src/test/scala/ExampleSpec.scala:7:12: object test is not a member of package zio[0m
+[0m[[0m[31merror[0m] [0m[0mimport zio.test.environment.{TestClock, TestConsole}[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matkodipalo/ZIO/src/test/scala/ExampleSpec.scala:9:28: not found: type DefaultRunnableSpec[0m
+[0m[[0m[31merror[0m] [0m[0mobject ExampleSpec extends DefaultRunnableSpec {[0m
+[0m[[0m[31merror[0m] [0m[0m                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matkodipalo/ZIO/src/test/scala/ExampleSpec.scala:32:5: not found: value suite[0m
+[0m[[0m[31merror[0m] [0m[0m    suite("ExampleSpec")([0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matkodipalo/ZIO/src/test/scala/ExampleSpec.scala:33:7: not found: value testM[0m
+[0m[[0m[31merror[0m] [0m[0m      testM("testing an effect using map operator") {[0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matkodipalo/ZIO/src/test/scala/ExampleSpec.scala:34:44: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : Int[0m
+[0m[[0m[31merror[0m] [0m[0m required: Boolean[0m
+[0m[[0m[31merror[0m] [0m[0m        ZIO.succeed(1 + 1).map(n => assert(n)(equalTo(2)))[0m
+[0m[[0m[31merror[0m] [0m[0m                                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matkodipalo/ZIO/src/test/scala/ExampleSpec.scala:34:47: not found: value equalTo[0m
+[0m[[0m[31merror[0m] [0m[0m        ZIO.succeed(1 + 1).map(n => assert(n)(equalTo(2)))[0m
+[0m[[0m[31merror[0m] [0m[0m                                              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matkodipalo/ZIO/src/test/scala/ExampleSpec.scala:36:7: not found: value testM[0m
+[0m[[0m[31merror[0m] [0m[0m      testM("testing an effect using a for comprehension") {[0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matkodipalo/ZIO/src/test/scala/ExampleSpec.scala:39:24: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : Int[0m
+[0m[[0m[31merror[0m] [0m[0m required: Boolean[0m
+[0m[[0m[31merror[0m] [0m[0m        } yield assert(n)(equalTo(2))[0m
+[0m[[0m[31merror[0m] [0m[0m                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matkodipalo/ZIO/src/test/scala/ExampleSpec.scala:39:27: not found: value equalTo[0m
+[0m[[0m[31merror[0m] [0m[0m        } yield assert(n)(equalTo(2))[0m
+[0m[[0m[31merror[0m] [0m[0m                          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matkodipalo/ZIO/src/test/scala/ExampleSpec.scala:41:7: not found: value test[0m
+[0m[[0m[31merror[0m] [0m[0m      test("hasSameElement") {[0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matkodipalo/ZIO/src/test/scala/ExampleSpec.scala:42:20: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : List[Int][0m
+[0m[[0m[31merror[0m] [0m[0m required: Boolean[0m
+[0m[[0m[31merror[0m] [0m[0m        assert(List(1, 1, 2, 3))(hasSameElements(List(3, 2, 1, 1)))[0m
+[0m[[0m[31merror[0m] [0m[0m                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matkodipalo/ZIO/src/test/scala/ExampleSpec.scala:42:34: not found: value hasSameElements[0m
+[0m[[0m[31merror[0m] [0m[0m        assert(List(1, 1, 2, 3))(hasSameElements(List(3, 2, 1, 1)))[0m
+[0m[[0m[31merror[0m] [0m[0m                                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matkodipalo/ZIO/src/test/scala/ExampleSpec.scala:44:7: not found: value testM[0m
+[0m[[0m[31merror[0m] [0m[0m      testM("fails") {[0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matkodipalo/ZIO/src/test/scala/ExampleSpec.scala:47:24: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : zio.Exit[Unit,Int][0m
+[0m[[0m[31merror[0m] [0m[0m required: Boolean[0m
+[0m[[0m[31merror[0m] [0m[0m        } yield assert(exit)(fails(isUnit))[0m
+[0m[[0m[31merror[0m] [0m[0m                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matkodipalo/ZIO/src/test/scala/ExampleSpec.scala:47:30: not found: value fails[0m
+[0m[[0m[31merror[0m] [0m[0m        } yield assert(exit)(fails(isUnit))[0m
+[0m[[0m[31merror[0m] [0m[0m                             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matkodipalo/ZIO/src/test/scala/ExampleSpec.scala:47:36: not found: value isUnit[0m
+[0m[[0m[31merror[0m] [0m[0m        } yield assert(exit)(fails(isUnit))[0m
+[0m[[0m[31merror[0m] [0m[0m                                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matkodipalo/ZIO/src/test/scala/ExampleSpec.scala:49:7: not found: value testM[0m
+[0m[[0m[31merror[0m] [0m[0m      testM("greet says hello to the user") {[0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matkodipalo/ZIO/src/test/scala/ExampleSpec.scala:51:16: not found: value TestConsole[0m
+[0m[[0m[31merror[0m] [0m[0m          _ <- TestConsole.feedLines("Jane")[0m
+[0m[[0m[31merror[0m] [0m[0m               ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matkodipalo/ZIO/src/test/scala/ExampleSpec.scala:53:20: not found: value TestConsole[0m
+[0m[[0m[31merror[0m] [0m[0m          value <- TestConsole.output[0m
+[0m[[0m[31merror[0m] [0m[0m                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matkodipalo/ZIO/src/test/scala/ExampleSpec.scala:54:30: Unit does not take parameters[0m
+[0m[[0m[31merror[0m] [0m[0m        } yield assert(value)(equalTo(Vector("Hello, Jane!\n")))[0m
+[0m[[0m[31merror[0m] [0m[0m                             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matkodipalo/ZIO/src/test/scala/ExampleSpec.scala:56:7: not found: value testM[0m
+[0m[[0m[31merror[0m] [0m[0m      testM("goShopping delays for one hour") {[0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matkodipalo/ZIO/src/test/scala/ExampleSpec.scala:59:16: not found: value TestClock[0m
+[0m[[0m[31merror[0m] [0m[0m          _ <- TestClock.adjust(1.hour)[0m
+[0m[[0m[31merror[0m] [0m[0m               ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matkodipalo/ZIO/src/test/scala/ExampleSpec.scala:61:17: not found: value assertCompletes[0m
+[0m[[0m[31merror[0m] [0m[0m        } yield assertCompletes[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matkodipalo/ZIO/src/test/scala/ExampleSpec.scala:63:7: not found: value testM[0m
+[0m[[0m[31merror[0m] [0m[0m      testM("queue success") {[0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matkodipalo/ZIO/src/test/scala/ExampleSpec.scala:67:18: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : Iterable[Int][0m
+[0m[[0m[31merror[0m] [0m[0m required: Boolean[0m
+[0m[[0m[31merror[0m] [0m[0m          assert(x)(equalTo(Iterable(1,2)))[0m
+[0m[[0m[31merror[0m] [0m[0m                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matkodipalo/ZIO/src/test/scala/ExampleSpec.scala:67:21: not found: value equalTo[0m
+[0m[[0m[31merror[0m] [0m[0m          assert(x)(equalTo(Iterable(1,2)))[0m
+[0m[[0m[31merror[0m] [0m[0m                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matkodipalo/ZIO/src/test/scala/ExampleSpec.scala:70:7: not found: value testM[0m
+[0m[[0m[31merror[0m] [0m[0m      testM("queue fail") {[0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matkodipalo/ZIO/src/test/scala/ExampleSpec.scala:74:18: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : Iterable[Int][0m
+[0m[[0m[31merror[0m] [0m[0m required: Boolean[0m
+[0m[[0m[31merror[0m] [0m[0m          assert(x)(equalTo(Iterable(1,2)))[0m
+[0m[[0m[31merror[0m] [0m[0m                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/matkodipalo/ZIO/src/test/scala/ExampleSpec.scala:74:21: not found: value equalTo[0m
+[0m[[0m[31merror[0m] [0m[0m          assert(x)(equalTo(Iterable(1,2)))[0m
+[0m[[0m[31merror[0m] [0m[0m                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m31 errors found[0m
+[0m[[0m[33mwarn[0m] [0m[0mGetting the hostname MacBook-Pro.local was slow (5002.500976 ms). This is likely because the computer's hostname is not set. You can set the hostname with the command: scutil --set HostName $(scutil --get LocalHostName).[0m
+[0m[[0m[31merror[0m] [0m[0m(Test / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 5 s, completed 26 Mar 2021, 20:23:51[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0mForcing garbage collection...[0m
+[0m[[0m[0minfo[0m] [0m[0mshutting down sbt server[0m
