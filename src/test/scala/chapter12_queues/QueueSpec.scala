@@ -4,6 +4,7 @@ import zio.clock._
 import zio.console.{putStrLn, _}
 import zio.duration._
 import zio.test.Assertion._
+import zio.test.TestAspect.{ignore, timeout}
 import zio.test._
 import zio.test.environment.{TestClock, TestConsole}
 import zio.{Fiber, Queue, URIO, ZIO, ZQueue}
@@ -123,7 +124,7 @@ object QueueSpec extends DefaultRunnableSpec {
           res <- queue.takeAll
         } yield assert(res)(equalTo(List("Ana", "Milovana")))
       },
-      testM("combining queues") {
+      ignore(testM("combining queues") {
         for {
           left <- Queue.unbounded[Helper.Name]
           right <- Queue.unbounded[Helper.Name]
@@ -136,7 +137,7 @@ object QueueSpec extends DefaultRunnableSpec {
         } yield assert(l, r)(
           equalTo(Helper.Name("Jane", "Doe"), Helper.Name("Jane", "Doe"))
         )
-      }
+      }) @@ timeout(5000.millis)
     )
 }
 
