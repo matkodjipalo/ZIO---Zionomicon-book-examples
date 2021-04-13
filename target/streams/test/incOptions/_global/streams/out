@@ -1,8 +1,26 @@
-[0m[[0m[0mdebug[0m] [0m[0mCreated transactional ClassFileManager with tempDir = /Users/matkodipalo/ZIO/target/scala-2.13/test-classes.bak[0m
+[0m[[0m[0mdebug[0m] [0m[0mCreated transactional ClassFileManager with tempDir = /home/matko/ZIO_Zionomicon-book-examples/target/scala-2.13/test-classes.bak[0m
 [0m[[0m[0mdebug[0m] [0m[0mAbout to delete class files:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	ExampleSpec.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Helper$Name.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	QueueSpec$$anonfun$$nestedInanonfun$spec$17$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Helper.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	QueueSpec.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Helper$Name$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Helper$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	QueueSpec$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0mWe backup class files:[0m
-[0m[[0m[0mdebug[0m] [0m[0mRolling back changes to class files.[0m
-[0m[[0m[0mdebug[0m] [0m[0mRemoving generated classes:[0m
-[0m[[0m[0mdebug[0m] [0m[0mRestoring class files: [0m
-[0m[[0m[0mdebug[0m] [0m[0mRemoving the temporary directory used for backing up class files: /Users/matkodipalo/ZIO/target/scala-2.13/test-classes.bak[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Helper$Name.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	QueueSpec$$anonfun$$nestedInanonfun$spec$17$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Helper.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	QueueSpec.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Helper$Name$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Helper$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	QueueSpec$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mRegistering generated classes:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Helper$Name.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	QueueSpec$$anonfun$$nestedInanonfun$spec$17$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Helper.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	QueueSpec.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Helper$Name$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Helper$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	QueueSpec$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mRemoving the temporary directory used for backing up class files: /home/matko/ZIO_Zionomicon-book-examples/target/scala-2.13/test-classes.bak[0m
