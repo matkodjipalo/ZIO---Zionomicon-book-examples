@@ -16,6 +16,7 @@ import zio.ZManaged
 import zio.Reservation
 import zio.Exit.Failure
 import zio.Exit.Success
+import zio.UIO
 
 object ComposableResourcesSpec extends DefaultRunnableSpec {
 
@@ -25,7 +26,7 @@ object ComposableResourcesSpec extends DefaultRunnableSpec {
         lazy val analyzeWeatherData: Task[(String, String)] =
           Helpers.withFile("temperatures.txt") { weatherData =>
             Helpers.withFile("results.txt") { results =>
-              Helpers.analyze(weatherData, results)
+              Helpers.analyze(weatherData, results, "Weather examples")
             }
           }
         assertM(analyzeWeatherData)(equalTo("temperatures.txt", "results.txt"))
@@ -36,7 +37,7 @@ object ComposableResourcesSpec extends DefaultRunnableSpec {
         lazy val analyzeWeatherData    =
           weatherDataAndResults.use {
             case (weatherData, results) =>
-              Helpers.analyze(weatherData, results)
+              Helpers.analyze(weatherData, results, "Using ZManaged.zipPar")
           }
         assertM(analyzeWeatherData)(equalTo("temperatures.txt", "results.txt"))
       },
@@ -46,7 +47,7 @@ object ComposableResourcesSpec extends DefaultRunnableSpec {
         lazy val analyzeWeatherData    =
           weatherDataAndResults.use {
             case (weatherData, results) =>
-              Helpers.analyze(weatherData, results)
+              Helpers.analyze(weatherData, results, "Using ZManaged.zipPar and fileMakeExit")
           }
         assertM(analyzeWeatherData)(equalTo("temperatures.txt", "results.txt"))
       },
@@ -102,13 +103,13 @@ object ComposableResourcesSpec extends DefaultRunnableSpec {
 
 object Helpers {
 
-  def openFile(name: String) =
+  def openFile(name: String): UIO[String] =
     ZIO.effectTotal {
       println(s"Opened file with name $name")
       name
     }
 
-  def closeFile(name: String) =
+  def closeFile(name: String): UIO[String] =
     ZIO.effectTotal {
       println(s"Closed file with name $name")
       name
@@ -119,9 +120,9 @@ object Helpers {
   ): Task[A] =
     openFile(name).bracket(closeFile)(use)
 
-  def analyze(weatherData: String, results: String): Task[(String, String)] =
+  def analyze(weatherData: String, results: String, testName: String): Task[(String, String)] =
     ZIO.effectTotal {
-      println(s"Analyzing files $weatherData and $results")
+      println(s"Analyzing files $weatherData and $results in test $testName")
       (weatherData, results)
     }
 
@@ -147,7 +148,7 @@ object Helpers {
 
   //not sure about this one, different signature than in book?
   def fileMakeExit(name: String): ZManaged[Any, Throwable, String]                       =
-    ZManaged.makeExit(openFile(name)) { case (result, _) => closeFile(result) }
+    ZManaged.makeExit(openFile(name)) { case (resource, _) => closeFile(resource) }
 
   def zioEffectToManagedWithFinalizer(basicTask: Task[String], finalizerMessage: String) =
     basicTask.toManaged(prevMsg =>
