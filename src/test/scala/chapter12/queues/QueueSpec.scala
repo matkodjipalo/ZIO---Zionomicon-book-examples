@@ -1,4 +1,4 @@
-package chapter12_queues
+package chapter12.queues
 
 import zio.clock._
 import zio.console.{putStrLn, _}
